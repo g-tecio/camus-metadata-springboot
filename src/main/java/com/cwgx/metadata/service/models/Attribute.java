@@ -10,18 +10,20 @@ public class Attribute {
     private Integer max_length = null;
     private Integer min_length = null;
     private Boolean required = null;
-    private ArrayList<Attribute> items = null;
+    private ArrayList<Attribute> properties = null;
+    private String items = null;
 
     public Attribute() {
     }
 
-    public Attribute(String label, String machine_name, String type, Integer max_length, Integer min_length, Boolean required, ArrayList<Attribute> items) {
+    public Attribute(String label, String machine_name, String type, Integer max_length, Integer min_length, Boolean required, ArrayList<Attribute> properties, String items) {
         this.label = label;
         this.machine_name = machine_name;
         this.type = type;
         this.max_length = max_length;
         this.min_length = min_length;
         this.required = required;
+        this.properties = properties;
         this.items = items;
     }
 
@@ -73,11 +75,19 @@ public class Attribute {
         this.required = required;
     }
 
-    public ArrayList<Attribute> getItems() {
+    public ArrayList<Attribute> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(ArrayList<Attribute> properties) {
+        this.properties = properties;
+    }
+
+    public String getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Attribute> items) {
+    public void setItems(String items) {
         this.items = items;
     }
 }
